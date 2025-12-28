@@ -1,0 +1,94 @@
+2025-12-29 02:58:01.391 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 8.0.1.Final
+2025-12-29 02:58:01.447 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarting,50] - Starting SpringSecurityDemoApplication using Java 17.0.14 with PID 20848 (D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back\target\classes started by Administrator in D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back)
+2025-12-29 02:58:01.449 [main] INFO  c.x.SpringSecurityDemoApplication - [logStartupProfileInfo,654] - No active profile set, falling back to 1 default profile: "default"
+2025-12-29 02:58:03.693 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9999"]
+2025-12-29 02:58:03.695 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2025-12-29 02:58:03.696 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-12-29 02:58:03.773 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2025-12-29 02:58:06.256 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9999"]
+2025-12-29 02:58:06.288 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarted,56] - Started SpringSecurityDemoApplication in 5.559 seconds (process running for 6.724)
+2025-12-29 03:29:01.926 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2204] - {dataSource-0} closing ...
+2025-12-29 03:30:44.379 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 8.0.1.Final
+2025-12-29 03:30:44.421 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarting,50] - Starting SpringSecurityDemoApplication using Java 17.0.14 with PID 17272 (D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back\target\classes started by Administrator in D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back)
+2025-12-29 03:30:44.422 [main] INFO  c.x.SpringSecurityDemoApplication - [logStartupProfileInfo,654] - No active profile set, falling back to 1 default profile: "default"
+2025-12-29 03:30:46.263 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9999"]
+2025-12-29 03:30:46.265 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2025-12-29 03:30:46.265 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-12-29 03:30:46.322 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2025-12-29 03:30:48.324 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9999"]
+2025-12-29 03:30:48.350 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarted,56] - Started SpringSecurityDemoApplication in 4.621 seconds (process running for 5.376)
+2025-12-29 03:35:35.007 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2204] - {dataSource-0} closing ...
+2025-12-29 03:35:40.132 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 8.0.1.Final
+2025-12-29 03:35:40.169 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarting,50] - Starting SpringSecurityDemoApplication using Java 17.0.14 with PID 6464 (D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back\target\classes started by Administrator in D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back)
+2025-12-29 03:35:40.170 [main] INFO  c.x.SpringSecurityDemoApplication - [logStartupProfileInfo,654] - No active profile set, falling back to 1 default profile: "default"
+2025-12-29 03:35:41.735 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9999"]
+2025-12-29 03:35:41.736 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2025-12-29 03:35:41.737 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-12-29 03:35:41.796 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2025-12-29 03:35:43.604 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9999"]
+2025-12-29 03:35:43.631 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarted,56] - Started SpringSecurityDemoApplication in 3.969 seconds (process running for 4.63)
+2025-12-29 03:43:36.680 [SpringApplicationShutdownHook] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Stopping ProtocolHandler ["http-nio-9999"]
+2025-12-29 03:43:36.718 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2204] - {dataSource-0} closing ...
+2025-12-29 03:43:45.559 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 8.0.1.Final
+2025-12-29 03:43:45.613 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarting,50] - Starting SpringSecurityDemoApplication using Java 17.0.14 with PID 14092 (D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back\target\classes started by Administrator in D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back)
+2025-12-29 03:43:45.615 [main] INFO  c.x.SpringSecurityDemoApplication - [logStartupProfileInfo,654] - No active profile set, falling back to 1 default profile: "default"
+2025-12-29 03:43:47.871 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9999"]
+2025-12-29 03:43:47.874 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2025-12-29 03:43:47.875 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-12-29 03:43:47.950 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2025-12-29 03:43:50.477 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9999"]
+2025-12-29 03:43:50.513 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarted,56] - Started SpringSecurityDemoApplication in 5.526 seconds (process running for 6.308)
+2025-12-29 04:41:40.387 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 8.0.1.Final
+2025-12-29 04:41:40.450 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarting,50] - Starting SpringSecurityDemoApplication using Java 17.0.14 with PID 13140 (D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back\target\classes started by Administrator in D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back)
+2025-12-29 04:41:40.451 [main] INFO  c.x.SpringSecurityDemoApplication - [logStartupProfileInfo,654] - No active profile set, falling back to 1 default profile: "default"
+2025-12-29 04:41:43.358 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9999"]
+2025-12-29 04:41:43.361 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2025-12-29 04:41:43.361 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-12-29 04:41:43.463 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2025-12-29 04:41:46.222 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9999"]
+2025-12-29 04:41:46.256 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarted,56] - Started SpringSecurityDemoApplication in 6.569 seconds (process running for 7.633)
+2025-12-29 05:21:12.073 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 8.0.1.Final
+2025-12-29 05:21:12.148 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarting,50] - Starting SpringSecurityDemoApplication using Java 17.0.14 with PID 33072 (D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back\target\classes started by Administrator in D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back)
+2025-12-29 05:21:12.150 [main] INFO  c.x.SpringSecurityDemoApplication - [logStartupProfileInfo,654] - No active profile set, falling back to 1 default profile: "default"
+2025-12-29 05:21:15.113 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9999"]
+2025-12-29 05:21:15.118 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2025-12-29 05:21:15.119 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-12-29 05:21:15.331 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2025-12-29 05:21:18.590 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9999"]
+2025-12-29 05:21:18.620 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarted,56] - Started SpringSecurityDemoApplication in 7.329 seconds (process running for 8.365)
+2025-12-29 05:21:24.760 [http-nio-9999-exec-4] INFO  o.a.t.u.h.p.Cookie - [log,173] - A cookie header was received [Hm_lvt_a1ff8825baa73c3a78eb96aa40325abc=1763987654,1763989607,1766336019,1766337024] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-12-29 05:21:24.769 [http-nio-9999-exec-4] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-29 05:21:25.287 [http-nio-9999-exec-1] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:21:25.830 [http-nio-9999-exec-4] INFO  o.s.a.AbstractOpenApiResource - [getOpenApi,390] - Init duration for springdoc-openapi is: 446 ms
+2025-12-29 05:21:28.171 [http-nio-9999-exec-3] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:21:28.467 [http-nio-9999-exec-6] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:21:42.056 [http-nio-9999-exec-3] INFO  c.a.d.p.DruidDataSource - [init,1002] - {dataSource-1} inited
+2025-12-29 05:22:28.004 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2204] - {dataSource-1} closing ...
+2025-12-29 05:22:28.012 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2277] - {dataSource-1} closed
+2025-12-29 05:22:31.352 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 8.0.1.Final
+2025-12-29 05:22:31.393 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarting,50] - Starting SpringSecurityDemoApplication using Java 17.0.14 with PID 30808 (D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back\target\classes started by Administrator in D:\A_接单\ai工具换图_已付1500_加急\basic-frame-back)
+2025-12-29 05:22:31.394 [main] INFO  c.x.SpringSecurityDemoApplication - [logStartupProfileInfo,654] - No active profile set, falling back to 1 default profile: "default"
+2025-12-29 05:22:33.143 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-9999"]
+2025-12-29 05:22:33.146 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2025-12-29 05:22:33.147 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-12-29 05:22:33.206 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2025-12-29 05:22:35.516 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-9999"]
+2025-12-29 05:22:35.544 [main] INFO  c.x.SpringSecurityDemoApplication - [logStarted,56] - Started SpringSecurityDemoApplication in 4.724 seconds (process running for 5.436)
+2025-12-29 05:22:42.817 [http-nio-9999-exec-1] INFO  o.a.t.u.h.p.Cookie - [log,173] - A cookie header was received [Hm_lvt_a1ff8825baa73c3a78eb96aa40325abc=1763987654,1763989607,1766336019,1766337024] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-12-29 05:22:42.833 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-29 05:22:43.280 [http-nio-9999-exec-1] INFO  c.a.d.p.DruidDataSource - [init,1002] - {dataSource-1} inited
+2025-12-29 05:22:49.962 [http-nio-9999-exec-2] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:22:51.997 [http-nio-9999-exec-3] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:22:53.497 [http-nio-9999-exec-4] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:22:54.898 [http-nio-9999-exec-5] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:23:36.258 [http-nio-9999-exec-6] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:23:40.501 [http-nio-9999-exec-7] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:23:48.333 [http-nio-9999-exec-8] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:23:53.821 [http-nio-9999-exec-9] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:23:55.476 [http-nio-9999-exec-10] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:23:56.253 [http-nio-9999-exec-1] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:24:08.016 [http-nio-9999-exec-3] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:24:08.476 [http-nio-9999-exec-4] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
+2025-12-29 05:24:09.202 [http-nio-9999-exec-5] INFO  c.x.c.s.JwtAuthenticationFilter - [doFilterInternal,63] - Authorization未携带
