@@ -4,13 +4,18 @@ import com.xiao.common.AjaxResult;
 import com.xiao.common.annotation.Log;
 import com.xiao.common.dto.UserDto;
 import com.xiao.http.req.ReqLogin;
+import com.xiao.http.req.ReqRegister;
 import com.xiao.service.UserService;
 import com.xiao.utils.SecurityUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
@@ -18,25 +23,6 @@ public class UserController {
 
     @Resource
     UserService userService;
-
-    @GetMapping("/test")
-    @Log(module = "测试", type = Log.OperationType.OTHER, saveParams = true, saveResult = true)
-    public AjaxResult<String> test() {
-        return AjaxResult.success("成功访问!");
-    }
-
-    @GetMapping("/admin")
-    @PreAuthorize("hasRole('ADMIN')")
-    @Log(module = "测试", type = Log.OperationType.OTHER, saveParams = true, saveResult = true)
-    public AjaxResult<String> admin() {
-        return AjaxResult.success("ADMIN认证成功!");
-    }
-
-    @GetMapping("/user")
-    @PreAuthorize("hasRole('USER')")
-    public AjaxResult<String> user() {
-        return AjaxResult.success("USER认证成功!");
-    }
 
     @GetMapping("/getLoginUser")
     public AjaxResult<UserDto> getLoginUser() {
@@ -56,9 +42,16 @@ public class UserController {
         return userService.login(req);
     }
 
-    @Operation(summary = "登出")
+    @Operation(summary = "注册")
+    @PostMapping("/register")
+    @Log(module = "注册")
+    public AjaxResult<String> register(@RequestBody @Valid ReqRegister req) {
+        return userService.register(req);
+    }
+
+    @Operation(summary = "退出")
     @PostMapping("/logout")
-    @Log(module = "登出")
+    @Log(module = "退出")
     public AjaxResult<String> logout() {
         return userService.logout();
     }

@@ -29,12 +29,6 @@ public class User {
     private String password;
 
     /**
-     * 警号
-     */
-    @Schema(description = "警号")
-    private String policeId;
-
-    /**
      * 真实姓名
      */
     @Schema(description = "真实姓名")

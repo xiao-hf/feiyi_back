@@ -35,6 +35,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private static final Set<String> excludedPaths = new HashSet<>(Arrays.asList("/doc.html",
             "/user/getCaptcha/**", //获取验证码
             "/user/login/**", //登录
+            "/user/register/**", //注册
 
             "/doc.html**",
             "/swagger-ui.html",

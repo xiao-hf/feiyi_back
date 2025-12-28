@@ -7,7 +7,6 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="police_id" jdbcType="VARCHAR" property="policeId" />
     <result column="real_name" jdbcType="VARCHAR" property="realName" />
     <result column="unit_id" jdbcType="BIGINT" property="unitId" />
     <result column="position" jdbcType="VARCHAR" property="position" />
@@ -25,7 +24,7 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, username, `password`, police_id, real_name, unit_id, `position`, id_card, gender, 
+    id, username, `password`, real_name, unit_id, `position`, id_card, gender, 
     phone, email, avatar, `enable`, create_time, update_time, last_login_time, is_deleted, 
     token
   </sql>
@@ -43,13 +42,13 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.xiao.dao.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into `user` (username, `password`, police_id, 
+    insert into `user` (username, `password`, 
       real_name, unit_id, `position`, 
       id_card, gender, phone, 
       email, avatar, `enable`, 
       create_time, update_time, last_login_time, 
       is_deleted, token)
-    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{policeId,jdbcType=VARCHAR}, 
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{realName,jdbcType=VARCHAR}, #{unitId,jdbcType=BIGINT}, #{position,jdbcType=VARCHAR}, 
       #{idCard,jdbcType=VARCHAR}, #{gender,jdbcType=TINYINT}, #{phone,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{enable,jdbcType=BIT}, 
@@ -65,9 +64,6 @@
       </if>
       <if test="password != null and password != ''">
         `password`,
-      </if>
-      <if test="policeId != null and policeId != ''">
-        police_id,
       </if>
       <if test="realName != null and realName != ''">
         real_name,
@@ -118,9 +114,6 @@
       </if>
       <if test="password != null and password != ''">
         #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="policeId != null and policeId != ''">
-        #{policeId,jdbcType=VARCHAR},
       </if>
       <if test="realName != null and realName != ''">
         #{realName,jdbcType=VARCHAR},
@@ -176,9 +169,6 @@
       <if test="password != null and password != ''">
         `password` = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="policeId != null and policeId != ''">
-        police_id = #{policeId,jdbcType=VARCHAR},
-      </if>
       <if test="realName != null and realName != ''">
         real_name = #{realName,jdbcType=VARCHAR},
       </if>
@@ -229,7 +219,6 @@
     update `user`
     set username = #{username,jdbcType=VARCHAR},
       `password` = #{password,jdbcType=VARCHAR},
-      police_id = #{policeId,jdbcType=VARCHAR},
       real_name = #{realName,jdbcType=VARCHAR},
       unit_id = #{unitId,jdbcType=BIGINT},
       `position` = #{position,jdbcType=VARCHAR},
@@ -258,11 +247,6 @@
       <trim prefix="`password` = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
           when id = #{item.id,jdbcType=BIGINT} then #{item.password,jdbcType=VARCHAR}
-        </foreach>
-      </trim>
-      <trim prefix="police_id = case" suffix="end,">
-        <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.policeId,jdbcType=VARCHAR}
         </foreach>
       </trim>
       <trim prefix="real_name = case" suffix="end,">
@@ -531,7 +515,6 @@
       </if>
       username,
       `password`,
-      police_id,
       real_name,
       unit_id,
       `position`,
@@ -554,7 +537,6 @@
       </if>
       #{username,jdbcType=VARCHAR},
       #{password,jdbcType=VARCHAR},
-      #{policeId,jdbcType=VARCHAR},
       #{realName,jdbcType=VARCHAR},
       #{unitId,jdbcType=BIGINT},
       #{position,jdbcType=VARCHAR},
@@ -577,7 +559,6 @@
       </if>
       username = #{username,jdbcType=VARCHAR},
       `password` = #{password,jdbcType=VARCHAR},
-      police_id = #{policeId,jdbcType=VARCHAR},
       real_name = #{realName,jdbcType=VARCHAR},
       unit_id = #{unitId,jdbcType=BIGINT},
       `position` = #{position,jdbcType=VARCHAR},
@@ -606,9 +587,6 @@
       </if>
       <if test="password != null and password != ''">
         `password`,
-      </if>
-      <if test="policeId != null and policeId != ''">
-        police_id,
       </if>
       <if test="realName != null and realName != ''">
         real_name,
@@ -664,9 +642,6 @@
       <if test="password != null and password != ''">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="policeId != null and policeId != ''">
-        #{policeId,jdbcType=VARCHAR},
-      </if>
       <if test="realName != null and realName != ''">
         #{realName,jdbcType=VARCHAR},
       </if>
@@ -721,9 +696,7 @@
       <if test="password != null and password != ''">
         `password` = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="policeId != null and policeId != ''">
-        police_id = #{policeId,jdbcType=VARCHAR},
-      </if>
+
       <if test="realName != null and realName != ''">
         real_name = #{realName,jdbcType=VARCHAR},
       </if>

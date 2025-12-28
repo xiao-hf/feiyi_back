@@ -5,6 +5,7 @@ import cn.hutool.core.util.IdUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.xiao.common.AjaxResult;
 import com.xiao.common.constants.RedisPrefix;
+import com.xiao.common.enums.RoleEnum;
 import com.xiao.common.dto.RoleDto;
 import com.xiao.common.dto.UserDto;
 import com.xiao.dao.Permission;
@@ -12,8 +13,8 @@ import com.xiao.dao.Role;
 import com.xiao.dao.RolePermission;
 import com.xiao.dao.User;
 import com.xiao.dao.UserRole;
-import com.xiao.exception.BusinessException;
 import com.xiao.http.req.ReqLogin;
+import com.xiao.http.req.ReqRegister;
 import com.xiao.mapper.PermissionMapper;
 import com.xiao.mapper.RoleMapper;
 import com.xiao.mapper.RolePermissionMapper;
@@ -58,14 +59,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AjaxResult<String> geneCode(String phone) {
-        List<User> users = userMapper.selectList(
-            Wrappers.<User>lambdaQuery()
-                .eq(User::getPhone, phone)
-                .eq(User::getIsDeleted, false)
-        );
-        if (users.isEmpty()) {
-            throw new BusinessException("用户不存在");
-        }
         String code = MyUtil.randomNumStr(6);
         redisUtil.set(RedisPrefix.LOGIN_CODE + phone, code, 5, TimeUnit.MINUTES);
 
@@ -159,5 +152,66 @@ public class UserServiceImpl implements UserService {
         String key = RedisPrefix.LOGIN_TOKEN + token;
         redisUtil.del(key);
         return AjaxResult.success("退出成功!");
+    }
+
+    @Override
+    public AjaxResult<String> register(ReqRegister req) {
+        String phone = req.getPhone();
+        String username = req.getUsername();
+        String password = req.getPassword();
+        String code = req.getCode();
+        String redisKey = RedisPrefix.LOGIN_CODE + phone;
+        if (!redisUtil.contains(redisKey)) {
+            return AjaxResult.error("验证码已失效，请重新获取");
+        }
+        Object cachedCode = redisUtil.get(redisKey);
+        if (!(cachedCode instanceof String) || !code.equals(cachedCode)) {
+            return AjaxResult.error("验证码错误");
+        }
+
+        // 唯一校验：用户名/手机号不得重复
+        long exists = userMapper.selectCount(
+            Wrappers.<User>lambdaQuery()
+                .eq(User::getUsername, username)
+                .or()
+                .eq(User::getPhone, phone)
+        );
+        if (exists > 0) {
+            return AjaxResult.error("用户名或手机号已存在");
+        }
+
+        Date now = new Date();
+        User user = new User();
+        user.setUsername(username);
+        user.setPhone(phone);
+        user.setPassword(password);
+        user.setRealName(req.getRealName());
+        user.setUnitId(req.getUnitId());
+        user.setPosition(req.getPosition());
+        user.setIdCard(req.getIdCard());
+        user.setGender(req.getGender());
+        user.setEmail(req.getEmail());
+        user.setAvatar(req.getAvatar());
+        user.setEnable(true);
+        user.setCreateTime(now);
+        user.setUpdateTime(now);
+        user.setIsDeleted(false);
+        userMapper.insert(user);
+
+        // 给新用户分配 USER 角色
+        Role userRoleEntity = roleMapper.selectOne(
+            Wrappers.<Role>lambdaQuery().eq(Role::getRoleCode, RoleEnum.USER.getCode())
+        );
+        if (userRoleEntity != null) {
+            UserRole relation = new UserRole();
+            relation.setUserId(user.getId());
+            relation.setRoleId(userRoleEntity.getId());
+            relation.setCreateTime(now);
+            userRoleMapper.insert(relation);
+        }
+
+        // 注册成功清理验证码
+        redisUtil.del(redisKey);
+        return AjaxResult.success("注册成功");
     }
 }
