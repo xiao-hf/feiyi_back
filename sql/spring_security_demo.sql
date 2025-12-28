@@ -1,7 +1,7 @@
 /*
  Navicat Premium Dump SQL
 
- Source Server         : 本机
+ Source Server         : localhost
  Source Server Type    : MySQL
  Source Server Version : 80041 (8.0.41)
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 80041 (8.0.41)
  File Encoding         : 65001
 
- Date: 15/04/2025 15:16:58
+ Date: 28/12/2025 13:44:56
 */
 
 SET NAMES utf8mb4;
@@ -50,7 +50,7 @@ CREATE TABLE `role`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `idx_role_code`(`role_code` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of role
@@ -103,7 +103,7 @@ CREATE TABLE `sys_login_log`  (
   INDEX `idx_status`(`status` ASC) USING BTREE,
   INDEX `idx_username`(`username` ASC) USING BTREE,
   INDEX `idx_ip`(`ip` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统登录日志' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统登录日志' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_login_log
@@ -140,7 +140,7 @@ CREATE TABLE `sys_operation_log`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_user_id`(`user_id` ASC) USING BTREE,
   INDEX `idx_status`(`status` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统操作日志' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统操作日志' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_operation_log
@@ -150,6 +150,18 @@ INSERT INTO `sys_operation_log` VALUES (8, '测试', 'OTHER', '', 'com.xiao.cont
 INSERT INTO `sys_operation_log` VALUES (9, '测试', 'OTHER', '', 'com.xiao.controller.UserController.admin()', '/user/admin', 'GET', NULL, '{\"success\":true,\"code\":\"200\",\"message\":\"\",\"data\":\"ADMIN认证成功!\",\"timestamp\":1744700203529}', 1, NULL, 1, '1', '127.0.0.1', 'Chrome', 'Windows', 0, NULL);
 INSERT INTO `sys_operation_log` VALUES (10, '测试', 'OTHER', '', 'com.xiao.controller.UserController.admin()', '/user/admin', 'GET', NULL, '{\"success\":true,\"code\":\"200\",\"message\":\"\",\"data\":\"ADMIN认证成功!\",\"timestamp\":1744700235383}', 1, NULL, 1, '1', '127.0.0.1', 'Chrome', 'Windows', 0, NULL);
 INSERT INTO `sys_operation_log` VALUES (11, '测试', 'OTHER', '', 'com.xiao.controller.UserController.admin()', '/user/admin', 'GET', NULL, '{\"success\":true,\"code\":\"200\",\"message\":\"\",\"data\":\"ADMIN认证成功!\",\"timestamp\":1744700235705}', 1, NULL, 1, '1', '127.0.0.1', 'Chrome', 'Windows', 0, NULL);
+INSERT INTO `sys_operation_log` VALUES (12, '登录', 'OTHER', '', 'com.xiao.controller.UserController.login()', '/user/login', 'POST', '{\"req\":{\"phone\":\"15286610576\",\"code\":\"114514\",\"type\":\"2\"}}', NULL, 1, NULL, NULL, NULL, '127.0.0.1', 'Chrome', 'Windows', 794, '2025-12-28 12:44:23');
+INSERT INTO `sys_operation_log` VALUES (13, '登录', 'OTHER', '', 'com.xiao.controller.UserController.login()', '/user/login', 'POST', '{\"req\":{\"phone\":\"15286610576\",\"code\":\"114514\",\"type\":\"2\"}}', NULL, 1, NULL, NULL, NULL, '127.0.0.1', 'Chrome', 'Windows', 17, '2025-12-28 12:44:39');
+INSERT INTO `sys_operation_log` VALUES (14, '登录', 'OTHER', '', 'com.xiao.controller.UserController.login()', '/user/login', 'POST', '{\"req\":{\"phone\":\"15286610576\",\"code\":\"114514\",\"type\":\"2\"}}', NULL, 1, NULL, NULL, NULL, '127.0.0.1', 'Chrome', 'Windows', 7, '2025-12-28 12:44:41');
+INSERT INTO `sys_operation_log` VALUES (15, '登录', 'OTHER', '', 'com.xiao.controller.UserController.login()', '/user/login', 'POST', '{\"req\":{\"phone\":\"15286610576\",\"code\":\"324545\",\"type\":\"2\"}}', NULL, 1, NULL, 1, '1', '127.0.0.1', 'Chrome', 'Windows', 219, '2025-12-28 12:45:11');
+INSERT INTO `sys_operation_log` VALUES (16, '注册', 'OTHER', '', 'com.xiao.controller.UserController.register()', '/user/register', 'POST', '{\"req\":{\"username\":\"aaa\",\"phone\":\"19352311776\",\"password\":\"114514\",\"code\":\"216852\",\"realName\":\"\",\"policeId\":null,\"idCard\":\"\",\"gender\":0,\"email\":\"\",\"avatar\":\"\",\"position\":\"\",\"unitId\":0}}', NULL, 1, NULL, NULL, NULL, '127.0.0.1', 'Chrome', 'Windows', 574, '2025-12-28 13:22:53');
+INSERT INTO `sys_operation_log` VALUES (17, '注册', 'OTHER', '', 'com.xiao.controller.UserController.register()', '/user/register', 'POST', '{\"req\":{\"username\":\"aaa\",\"phone\":\"19352311776\",\"password\":\"114514\",\"code\":\"613254\",\"realName\":\"\",\"policeId\":null,\"idCard\":\"\",\"gender\":0,\"email\":\"\",\"avatar\":\"\",\"position\":\"\",\"unitId\":0}}', NULL, 0, '\r\n### Error updating database.  Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'policeId\' in \'class com.xiao.dao.User\'\r\n### The error may exist in file [D:\\A_接单\\mybatis-plus\\basic_frame_back\\target\\classes\\mapper\\UserMapper.xml]\r\n### The error may involve com.xiao.mapper.UserMapper.insert-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into `user` (username, `password`, police_id,        real_name, unit_id, `position`,        id_card, gender, phone,        email, avatar, `enable`,        create_time, update_time, last_login_time,        is_deleted, token)     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)\r\n### Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'policeId\' in \'class com.xiao.dao.User\'', NULL, NULL, '127.0.0.1', 'Chrome', 'Windows', 123, '2025-12-28 13:23:18');
+INSERT INTO `sys_operation_log` VALUES (18, '注册', 'OTHER', '', 'com.xiao.controller.UserController.register()', '/user/register', 'POST', '{\"req\":{\"username\":\"aaa\",\"phone\":\"19352311776\",\"password\":\"114514\",\"code\":\"118208\",\"realName\":\"\",\"idCard\":\"\",\"gender\":0,\"email\":\"\",\"avatar\":\"\",\"position\":\"\",\"unitId\":0}}', NULL, 0, '\r\n### Error updating database.  Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'policeId\' in \'class com.xiao.dao.User\'\r\n### The error may exist in file [D:\\A_接单\\mybatis-plus\\basic_frame_back\\target\\classes\\mapper\\UserMapper.xml]\r\n### The error may involve com.xiao.mapper.UserMapper.insert-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into `user` (username, `password`, police_id,        real_name, unit_id, `position`,        id_card, gender, phone,        email, avatar, `enable`,        create_time, update_time, last_login_time,        is_deleted, token)     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)\r\n### Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'policeId\' in \'class com.xiao.dao.User\'', NULL, NULL, '127.0.0.1', 'Chrome', 'Windows', 467, '2025-12-28 13:31:23');
+INSERT INTO `sys_operation_log` VALUES (19, '注册', 'OTHER', '', 'com.xiao.controller.UserController.register()', '/user/register', 'POST', '{\"req\":{\"username\":\"aaa\",\"phone\":\"19352311776\",\"password\":\"114514\",\"code\":\"686570\",\"realName\":\"\",\"idCard\":\"\",\"gender\":0,\"email\":\"\",\"avatar\":\"\",\"position\":\"\",\"unitId\":0}}', NULL, 1, NULL, NULL, NULL, '127.0.0.1', 'Chrome', 'Windows', 532, '2025-12-28 13:36:10');
+INSERT INTO `sys_operation_log` VALUES (20, '登录', 'OTHER', '', 'com.xiao.controller.UserController.login()', '/user/login', 'POST', '{\"req\":{\"phone\":\"19352311776\",\"code\":\"114514\",\"type\":\"2\"}}', NULL, 1, NULL, NULL, NULL, '127.0.0.1', 'Chrome', 'Windows', 11, '2025-12-28 13:36:22');
+INSERT INTO `sys_operation_log` VALUES (21, '登录', 'OTHER', '', 'com.xiao.controller.UserController.login()', '/user/login', 'POST', '{\"req\":{\"phone\":\"19352311776\",\"code\":\"114514\",\"type\":\"1\"}}', NULL, 1, NULL, NULL, NULL, '127.0.0.1', 'Chrome', 'Windows', 105, '2025-12-28 13:36:27');
+INSERT INTO `sys_operation_log` VALUES (22, '注册', 'OTHER', '', 'com.xiao.controller.UserController.register()', '/user/register', 'POST', '{\"req\":{\"username\":\"aaa\",\"phone\":\"19352311776\",\"password\":\"114514\",\"code\":\"202528\",\"realName\":\"\",\"idCard\":\"\",\"gender\":0,\"email\":\"\",\"avatar\":\"\",\"position\":\"\",\"unitId\":0}}', NULL, 1, NULL, NULL, NULL, '127.0.0.1', 'Chrome', 'Windows', 397, '2025-12-28 13:44:05');
+INSERT INTO `sys_operation_log` VALUES (23, '登录', 'OTHER', '', 'com.xiao.controller.UserController.login()', '/user/login', 'POST', '{\"req\":{\"phone\":\"19352311776\",\"code\":\"114514\",\"type\":\"1\"}}', NULL, 1, NULL, 4, 'aaa', '127.0.0.1', 'Chrome', 'Windows', 178, '2025-12-28 13:44:10');
 
 -- ----------------------------
 -- Table structure for user
@@ -159,7 +171,6 @@ CREATE TABLE `user`  (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '登录用户名',
   `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '密码',
-  `police_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '警号',
   `real_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '真实姓名',
   `unit_id` bigint NOT NULL COMMENT '所属部门/单位ID',
   `position` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '职位',
@@ -176,16 +187,15 @@ CREATE TABLE `user`  (
   `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '登陆成功token',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `username`(`username` ASC) USING BTREE,
-  UNIQUE INDEX `police_id`(`police_id` ASC) USING BTREE,
-  UNIQUE INDEX `idx_police_id`(`police_id` ASC) USING BTREE,
   UNIQUE INDEX `idx_username`(`username` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, '1', '1', '1', '1', 1, '1', '1', 1, '15286610576', '1', '1', b'1', '1970-01-03 00:00:00', '2025-04-11 14:44:41', '2025-04-15 15:13:05', b'0', 'e72343f6-ce56-4fd5-8ce4-a087f967338e');
-INSERT INTO `user` VALUES (2, '323', '1', '23', '1', 1, '1', '1', 1, '15286610576', '1', '1', b'0', '1970-01-03 00:00:00', '2025-04-11 16:13:25', '1970-01-02 00:00:00', b'1', NULL);
+INSERT INTO `user` VALUES (1, '1', '1', '1', 1, '1', '1', 1, '15286610576', '1', '1', b'1', '1970-01-03 00:00:00', '2025-04-11 14:44:41', '2025-12-28 12:45:11', b'0', '259a8f15-5cc6-4cf8-90e8-e93b404d6366');
+INSERT INTO `user` VALUES (2, '323', '1', '1', 1, '1', '1', 1, '15286610576', '1', '1', b'0', '1970-01-03 00:00:00', '2025-04-11 16:13:25', '1970-01-02 00:00:00', b'1', NULL);
+INSERT INTO `user` VALUES (4, 'aaa', '114514', '', 0, '', '', 0, '19352311776', '', '', b'1', '2025-12-28 13:44:04', '2025-12-28 13:44:04', '2025-12-28 13:44:10', b'0', '2e75f35d-9170-4956-81f5-1edf5766faea');
 
 -- ----------------------------
 -- Table structure for user_role
@@ -199,11 +209,12 @@ CREATE TABLE `user_role`  (
   `create_by` bigint NULL DEFAULT NULL COMMENT '创建人ID',
   PRIMARY KEY (`id`, `user_id`) USING BTREE,
   UNIQUE INDEX `idx_user_role`(`user_id` ASC, `role_id` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user_role
 -- ----------------------------
 INSERT INTO `user_role` VALUES (1, 1, 1, '2025-04-11 16:18:11', NULL);
+INSERT INTO `user_role` VALUES (2, 4, 2, '2025-12-28 13:44:04', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
