@@ -1,7 +1,7 @@
 package com.xiao.common.dto;
 
-import com.xiao.dao.dto.Permission;
-import com.xiao.dao.dto.Role;
+import com.xiao.dao.Permission;
+import com.xiao.dao.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

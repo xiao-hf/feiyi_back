@@ -1,9 +1,9 @@
 package com.xiao.service.impl;
 
-import com.xiao.dao.dto.SysLoginLog;
-import com.xiao.dao.dto.SysOperationLog;
-import com.xiao.dao.inter.SysLoginLogMapper;
-import com.xiao.dao.inter.SysOperationLogMapper;
+import com.xiao.dao.SysLoginLog;
+import com.xiao.dao.SysOperationLog;
+import com.xiao.mapper.SysLoginLogMapper;
+import com.xiao.mapper.SysOperationLogMapper;
 import com.xiao.service.LogService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;

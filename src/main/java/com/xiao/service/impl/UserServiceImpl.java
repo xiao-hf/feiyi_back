@@ -2,16 +2,14 @@ package com.xiao.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.IdUtil;
-import cn.hutool.core.util.RandomUtil;
-import com.alibaba.druid.sql.visitor.functions.If;
 import com.xiao.common.AjaxResult;
 import com.xiao.common.constants.RedisPrefix;
 import com.xiao.common.dto.RoleDto;
 import com.xiao.common.dto.UserDto;
-import com.xiao.dao.dto.*;
-import com.xiao.dao.inter.*;
+import com.xiao.dao.*;
 import com.xiao.exception.BusinessException;
 import com.xiao.http.req.ReqLogin;
+import com.xiao.mapper.*;
 import com.xiao.service.UserService;
 import com.xiao.utils.JwtUtil;
 import com.xiao.utils.MyUtil;

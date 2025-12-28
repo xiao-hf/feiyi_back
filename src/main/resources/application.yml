@@ -16,7 +16,6 @@ spring:
       database: 2
 mybatis:
   check-config-location: true
-  mapper-locations: classpath*:com/xiao/dao/mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 knife4j:

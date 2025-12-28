@@ -1,6 +1,6 @@
 package com.xiao.common.dto;
 
-import com.xiao.dao.dto.User;
+import com.xiao.dao.User;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

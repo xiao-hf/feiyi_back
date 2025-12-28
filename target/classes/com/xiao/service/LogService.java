@@ -1,7 +1,7 @@
 package com.xiao.service;
 
-import com.xiao.dao.dto.SysLoginLog;
-import com.xiao.dao.dto.SysOperationLog;
+import com.xiao.dao.SysLoginLog;
+import com.xiao.dao.SysOperationLog;
 
 public interface LogService {
     void saveOperationLog(SysOperationLog log);

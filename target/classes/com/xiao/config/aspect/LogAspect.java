@@ -1,13 +1,12 @@
 package com.xiao.config.aspect;
 
 import cn.hutool.core.util.StrUtil;
-import com.alibaba.druid.util.StringUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xiao.common.annotation.Log;
 import com.xiao.common.dto.UserDto;
-import com.xiao.dao.dto.SysLoginLog;
-import com.xiao.dao.dto.SysOperationLog;
+import com.xiao.dao.SysLoginLog;
+import com.xiao.dao.SysOperationLog;
 import com.xiao.http.req.ReqLogin;
 import com.xiao.service.LogService;
 import com.xiao.utils.RequestUtil;

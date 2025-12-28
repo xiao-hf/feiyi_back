@@ -1,6 +1,6 @@
 package com.xiao;
 
-import com.xiao.dao.inter.UserMapper;
+import com.xiao.mapper.UserMapper;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
