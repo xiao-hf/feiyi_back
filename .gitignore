@@ -1,0 +1,42 @@
+# Maven build output
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+!.mvn/wrapper/MavenWrapperDownloader.java
+
+# Compiled sources and packaged archives
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs and temp files
+logs/
+*.log
+*.out
+*.tmp
+*.pid
+
+# IDE settings
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.code-workspace
+
+# JetBrains defaults (kept for clarity if .idea is partially tracked)
+.idea/shelf/
+.idea/workspace.xml
+.idea/httpRequests/
+.idea/dataSources/
+.idea/dataSources.local.xml
+
+# OS-specific clutter
+.DS_Store
+Thumbs.db
+
+# Editor backups
+*~
+*.swp
+*.swo

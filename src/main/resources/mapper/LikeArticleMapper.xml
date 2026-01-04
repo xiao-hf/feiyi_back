@@ -1,41 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiao.mapper.RoleMapper">
-  <resultMap id="BaseResultMap" type="com.xiao.dao.Role">
+<mapper namespace="com.xiao.mapper.LikeArticleMapper">
+  <resultMap id="BaseResultMap" type="com.xiao.dao.LikeArticle">
     <!--@mbg.generated-->
-    <!--@Table `role`-->
+    <!--@Table like_article-->
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
-    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="article_id" jdbcType="BIGINT" property="articleId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, role_code, role_name, create_time, update_time
+    id, article_id, user_id, create_time
   </sql>
   <update id="updateBatch" parameterType="java.util.List">
     <!--@mbg.generated-->
-    update `role`
+    update like_article
     <trim prefix="set" suffixOverrides=",">
-      <trim prefix="role_code = case" suffix="end,">
+      <trim prefix="article_id = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.roleCode,jdbcType=VARCHAR}
+          when id = #{item.id,jdbcType=BIGINT} then #{item.articleId,jdbcType=BIGINT}
         </foreach>
       </trim>
-      <trim prefix="role_name = case" suffix="end,">
+      <trim prefix="user_id = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.roleName,jdbcType=VARCHAR}
+          when id = #{item.id,jdbcType=BIGINT} then #{item.userId,jdbcType=BIGINT}
         </foreach>
       </trim>
       <trim prefix="create_time = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
           when id = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=TIMESTAMP}
-        </foreach>
-      </trim>
-      <trim prefix="update_time = case" suffix="end,">
-        <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=TIMESTAMP}
         </foreach>
       </trim>
     </trim>
@@ -46,24 +40,24 @@
   </update>
   <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into `role`
-    (role_code, role_name, create_time, update_time)
+    insert into like_article
+    (article_id, user_id, create_time)
     values
     <foreach collection="list" item="item" separator=",">
-      (#{item.roleCode,jdbcType=VARCHAR}, #{item.roleName,jdbcType=VARCHAR}, #{item.createTime,jdbcType=TIMESTAMP}, 
-        #{item.updateTime,jdbcType=TIMESTAMP})
+      (#{item.articleId,jdbcType=BIGINT}, #{item.userId,jdbcType=BIGINT}, #{item.createTime,jdbcType=TIMESTAMP}
+        )
     </foreach>
   </insert>
   <insert id="batchInsertSelectiveUseDefaultForNull" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into `role`
-    (role_code, role_name, create_time, update_time)
+    insert into like_article
+    (article_id, user_id, create_time)
     values
     <foreach collection="list" item="item" separator=",">
       (
       <choose>
-        <when test="item.roleCode != null">
-          #{item.roleCode,jdbcType=VARCHAR},
+        <when test="item.articleId != null">
+          #{item.articleId,jdbcType=BIGINT},
         </when>
         <!--@ignoreSql-->
         <otherwise>
@@ -71,8 +65,8 @@
         </otherwise>
       </choose>
       <choose>
-        <when test="item.roleName != null">
-          #{item.roleName,jdbcType=VARCHAR},
+        <when test="item.userId != null">
+          #{item.userId,jdbcType=BIGINT},
         </when>
         <!--@ignoreSql-->
         <otherwise>
@@ -81,16 +75,7 @@
       </choose>
       <choose>
         <when test="item.createTime != null">
-          #{item.createTime,jdbcType=TIMESTAMP},
-        </when>
-        <!--@ignoreSql-->
-        <otherwise>
-          DEFAULT,
-        </otherwise>
-      </choose>
-      <choose>
-        <when test="item.updateTime != null">
-          #{item.updateTime,jdbcType=TIMESTAMP}
+          #{item.createTime,jdbcType=TIMESTAMP}
         </when>
         <!--@ignoreSql-->
         <otherwise>
@@ -100,75 +85,66 @@
       )
     </foreach>
   </insert>
-  <insert id="insertOnDuplicateUpdate" keyColumn="id" keyProperty="id" parameterType="com.xiao.dao.Role" useGeneratedKeys="true">
+  <insert id="insertOnDuplicateUpdate" keyColumn="id" keyProperty="id" parameterType="com.xiao.dao.LikeArticle" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into `role`
+    insert into like_article
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      role_code,
-      role_name,
+      article_id,
+      user_id,
       create_time,
-      update_time,
     </trim>
     values
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=BIGINT},
       </if>
-      #{roleCode,jdbcType=VARCHAR},
-      #{roleName,jdbcType=VARCHAR},
+      #{articleId,jdbcType=BIGINT},
+      #{userId,jdbcType=BIGINT},
       #{createTime,jdbcType=TIMESTAMP},
-      #{updateTime,jdbcType=TIMESTAMP},
     </trim>
     on duplicate key update 
     <trim suffixOverrides=",">
       <if test="id != null">
         id = #{id,jdbcType=BIGINT},
       </if>
-      role_code = #{roleCode,jdbcType=VARCHAR},
-      role_name = #{roleName,jdbcType=VARCHAR},
+      article_id = #{articleId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
     </trim>
   </insert>
-  <insert id="insertOnDuplicateUpdateSelective" keyColumn="id" keyProperty="id" parameterType="com.xiao.dao.Role" useGeneratedKeys="true">
+  <insert id="insertOnDuplicateUpdateSelective" keyColumn="id" keyProperty="id" parameterType="com.xiao.dao.LikeArticle" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into `role`
+    insert into like_article
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="roleCode != null and roleCode != ''">
-        role_code,
+      <if test="articleId != null">
+        article_id,
       </if>
-      <if test="roleName != null and roleName != ''">
-        role_name,
+      <if test="userId != null">
+        user_id,
       </if>
       <if test="createTime != null">
         create_time,
       </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
     </trim>
     values
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="roleCode != null and roleCode != ''">
-        #{roleCode,jdbcType=VARCHAR},
+      <if test="articleId != null">
+        #{articleId,jdbcType=BIGINT},
       </if>
-      <if test="roleName != null and roleName != ''">
-        #{roleName,jdbcType=VARCHAR},
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
     on duplicate key update 
@@ -176,17 +152,14 @@
       <if test="id != null">
         id = #{id,jdbcType=BIGINT},
       </if>
-      <if test="roleCode != null and roleCode != ''">
-        role_code = #{roleCode,jdbcType=VARCHAR},
+      <if test="articleId != null">
+        article_id = #{articleId,jdbcType=BIGINT},
       </if>
-      <if test="roleName != null and roleName != ''">
-        role_name = #{roleName,jdbcType=VARCHAR},
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>

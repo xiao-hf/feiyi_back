@@ -10,37 +10,47 @@ import lombok.Data;
 
 @Schema
 @Data
-@TableName(value = "`role`")
-public class Role {
+@TableName(value = "app_img")
+public class AppImg {
+    /**
+     * 主键
+     */
     @TableId(value = "id", type = IdType.AUTO)
-    @Schema(description = "")
+    @Schema(description="主键")
     private Long id;
 
     /**
-     * 角色编码
+     * 小程序id
      */
-    @TableField(value = "role_code")
-    @Schema(description = "角色编码")
-    private String roleCode;
+    @TableField(value = "app_id")
+    @Schema(description="小程序id")
+    private String appId;
 
     /**
-     * 角色名称
+     * 小程序名字
      */
-    @TableField(value = "role_name")
-    @Schema(description = "角色名称")
-    private String roleName;
+    @TableField(value = "`name`")
+    @Schema(description="小程序名字")
+    private String name;
 
     /**
      * 创建时间
      */
     @TableField(value = "create_time")
-    @Schema(description = "创建时间")
+    @Schema(description="创建时间")
     private Date createTime;
 
     /**
-     * 更新时间
+     * 修改时间
      */
     @TableField(value = "update_time")
-    @Schema(description = "更新时间")
+    @Schema(description="修改时间")
     private Date updateTime;
+
+    /**
+     * 企业微信图片
+     */
+    @TableField(value = "wx_img")
+    @Schema(description="企业微信图片")
+    private String wxImg;
 }

@@ -10,37 +10,33 @@ import lombok.Data;
 
 @Schema
 @Data
-@TableName(value = "user_role")
-public class UserRole {
+@TableName(value = "like_article")
+public class LikeArticle {
+    /**
+     * 主键
+     */
     @TableId(value = "id", type = IdType.AUTO)
-    @Schema(description = "")
+    @Schema(description="主键")
     private Long id;
 
     /**
-     * 用户ID
+     * 文章id
      */
-    @TableField(value = "user_id")
-    @Schema(description = "用户ID")
-    private Long userId;
+    @TableField(value = "article_id")
+    @Schema(description="文章id")
+    private Long articleId;
 
     /**
-     * 角色ID
+     * 用户id
      */
-    @TableField(value = "role_id")
-    @Schema(description = "角色ID")
-    private Long roleId;
+    @TableField(value = "user_id")
+    @Schema(description="用户id")
+    private Long userId;
 
     /**
      * 创建时间
      */
     @TableField(value = "create_time")
-    @Schema(description = "创建时间")
+    @Schema(description="创建时间")
     private Date createTime;
-
-    /**
-     * 创建人ID
-     */
-    @TableField(value = "create_by")
-    @Schema(description = "创建人ID")
-    private Long createBy;
 }

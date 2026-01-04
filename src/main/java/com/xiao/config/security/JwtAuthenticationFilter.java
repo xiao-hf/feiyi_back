@@ -36,6 +36,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             "/user/getCaptcha/**", //获取验证码
             "/user/login/**", //登录
             "/user/register/**", //注册
+            "/common/weather/**",
+            "/common/address/**",
 
             "/doc.html**",
             "/swagger-ui.html",

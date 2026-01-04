@@ -18,6 +18,12 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>8.5.7</version>
+        </dependency>
+
         <!-- Spring AOP 依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
